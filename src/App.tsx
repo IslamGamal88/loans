@@ -1,6 +1,6 @@
 import { FC } from "react";
-import CurrentLoans from "./components/CurrentLoans";
+import CurrentLoans from "./views/Loans/CurrentLoansView";
 
-const App: FC = ({ children }) => <CurrentLoans />;
+const App: FC = ({ children }) => <CurrentLoans>{children}</CurrentLoans>;
 
 export default App;
