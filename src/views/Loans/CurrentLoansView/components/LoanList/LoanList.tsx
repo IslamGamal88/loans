@@ -1,14 +1,15 @@
 import { FC } from "react";
-import Loan from "../Loan";
+import Loan from "../Loan/Loan";
 import { LoanListProps } from "../../../types";
+import { VStack } from "@chakra-ui/react";
 
 const LoanList: FC<LoanListProps> = ({ loans }) => {
   return (
-    <div>
+    <VStack align="flex-start" w="100%" spacing={10}>
       {loans.map((loan) => (
-        <Loan loan={loan} />
+        <Loan key={loan.id} loan={loan} />
       ))}
-    </div>
+    </VStack>
   );
 };
 

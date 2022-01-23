@@ -1,4 +1,4 @@
-import LoanList from ".";
+import LoanList from "./LoanList";
 import { render, screen } from "@testing-library/react";
 
 describe("LoanList", () => {

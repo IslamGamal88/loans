@@ -1,1 +1,1 @@
-import Loan from ".";
+import Loan from "./Loan";

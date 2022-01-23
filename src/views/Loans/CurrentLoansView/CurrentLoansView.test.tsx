@@ -1,4 +1,4 @@
-import CurrentLoans from ".";
+import CurrentLoans from "./CurrentLoansView";
 import { render, screen } from "@testing-library/react";
 
 describe("CurrentLoans", () => {
