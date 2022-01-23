@@ -1,9 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import React from "react";
+import { FC } from "react";
+import { Props } from "./types";
 
-const TotalAvailable = () => {
+const TotalAvailable: FC<Props> = ({ totalAvailable }) => {
   return (
-    <Box alignSelf={"center"}>Total amount available for investments: </Box>
+    <Box alignSelf={"center"}>
+      Total amount available for investments: {totalAvailable}
+    </Box>
   );
 };
 

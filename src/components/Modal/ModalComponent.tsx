@@ -11,7 +11,7 @@ import {
   NumberInputStepper,
   HStack,
 } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Props } from "./types";
 
 const ModalComponent: FC<Props> = ({
@@ -21,6 +21,8 @@ const ModalComponent: FC<Props> = ({
   totalAvailable,
   children,
 }) => {
+  const [value, setValue] = useState(0);
+  const handleChange = (value: string) => setValue(parseInt(value) || 0);
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -31,6 +33,8 @@ const ModalComponent: FC<Props> = ({
           <ModalFooter>
             <HStack justifyContent={"space-between"} w={"full"}>
               <NumberInput
+                value={value}
+                onChange={handleChange}
                 clampValueOnBlur={false}
                 w={"full"}
                 min={0}
@@ -39,7 +43,9 @@ const ModalComponent: FC<Props> = ({
                 <NumberInputField />
                 <NumberInputStepper></NumberInputStepper>
               </NumberInput>
-              <Button bg={"yellow.300"}>Invest</Button>
+              <Button disabled={value > totalAvailable} bg={"yellow.300"}>
+                Invest
+              </Button>
             </HStack>
           </ModalFooter>
         </ModalContent>

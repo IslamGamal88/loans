@@ -32,6 +32,11 @@ describe("LoanList", () => {
     expect(
       screen.getByText("12 Hollins Green Road, Marple")
     ).toBeInTheDocument();
-    expect(screen.getByText("Loan 3")).not.toBeInTheDocument();
+    expect(screen.queryByText("Loan 3")).not.toBeInTheDocument();
+  });
+
+  it("renders no loans", () => {
+    render(<LoanList loans={[]} />);
+    expect(screen.queryByText("Loan 1")).not.toBeInTheDocument();
   });
 });

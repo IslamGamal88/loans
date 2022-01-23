@@ -13,7 +13,6 @@ import { LoanProps } from "../../../types";
 
 const Loan: FC<LoanProps> = ({ loan }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <Box w={"full"} bg="white" p={[4, 8]}>
       <Flex justifyContent="space-between" align="center">

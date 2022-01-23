@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { VStack, Heading, Container, Box, Flex } from "@chakra-ui/react";
-import CurrentLoans from "../views/Loans/CurrentLoansView/CurrentLoansView";
+import { Heading, Container, Box, Flex } from "@chakra-ui/react";
+import CurrentLoansView from "../views/Loans/CurrentLoansView/CurrentLoansView";
 import TotalAvailable from "../views/Loans/CurrentLoansView/components/TotalAvailable/TotalAvailable";
 
 const Main: FC = ({ children }) => (
@@ -20,7 +20,7 @@ const Main: FC = ({ children }) => (
         h="full"
       >
         <Heading>Current Loans</Heading>
-        <CurrentLoans>{children}</CurrentLoans>
+        <CurrentLoansView>{children}</CurrentLoansView>
         <TotalAvailable />
       </Flex>
     </Container>
