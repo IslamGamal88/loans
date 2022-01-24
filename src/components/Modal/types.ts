@@ -1,6 +1,9 @@
+import { Loan } from "../../views/CurrentLoansView/types";
+
 export interface Props {
   isOpen: boolean;
   onClose: () => void;
   header: string;
-  totalAvailable: number;
+  availableAmount: number;
+  loan: Loan;
 }

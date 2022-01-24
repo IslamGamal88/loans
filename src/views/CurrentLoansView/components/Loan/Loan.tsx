@@ -10,6 +10,7 @@ import {
 import { FC } from "react";
 import Gate from "../../../../components/Gate/Gate";
 import ModalComponent from "../../../../components/Modal/ModalComponent";
+import { formatNumber, stringToNumber } from "../../../../util/string";
 import { LoanProps } from "../../types";
 
 const Loan: FC<LoanProps> = ({ loan }) => {
@@ -31,13 +32,16 @@ const Loan: FC<LoanProps> = ({ loan }) => {
             Invest
           </Button>
           <ModalComponent
-            totalAvailable={10}
+            availableAmount={stringToNumber(loan.availableAmount)}
             header="Invest in loan"
             onClose={onClose}
             isOpen={isOpen}
+            loan={loan}
           >
             <VStack align={"flex-start"}>
               <Text>{loan.title}</Text>
+              <Text>{formatNumber(stringToNumber(loan.availableAmount))}</Text>
+              <Text>{loan.loanValue}</Text>
             </VStack>
           </ModalComponent>
         </VStack>

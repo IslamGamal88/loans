@@ -8,8 +8,7 @@ export interface LoansContext {
 }
 
 export interface DispatchContext {
-  type: string;
-  payload: any;
+  dispatch: ({ type }: { type: string }) => void;
 }
 
 export interface Action {

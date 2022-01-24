@@ -7,4 +7,9 @@ const snakeToCamelCase = (str: string) =>
     .map((word, index) => (index === 0 ? word : capitalize(word)))
     .join("");
 
-export { capitalize, snakeToCamelCase };
+const stringToNumber = (str: string | number) =>
+  typeof str === "string" ? parseInt(str.replace(",", "")) : str;
+
+const formatNumber = (num: number) => Intl.NumberFormat().format(num);
+
+export { capitalize, snakeToCamelCase, stringToNumber, formatNumber };

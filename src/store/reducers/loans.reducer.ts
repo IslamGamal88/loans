@@ -1,15 +1,15 @@
 import loansJson from "../../current-loans.json";
 import { transformObjectKeys } from "../../util/object";
-import { Action, DispatchContext, LoansContext } from "../types";
+import { stringToNumber } from "../../util/string";
+import { Action, LoansContext } from "../types";
 
 const loans = loansJson.loans.map((loan) => transformObjectKeys(loan));
 const totalAvailable = loans.reduce(
-  (acc, loan) => acc + parseFloat(loan.availableAmount),
+  (acc, loan) => parseInt(acc) + stringToNumber(loan.availableAmount),
   0
 );
 
 export const initialState: LoansContext = { loans, totalAvailable };
-export const initialDispatch: DispatchContext = { type: "", payload: {} };
 const loansReducer = (state = initialState, { type, payload }: Action) => {
   switch (type) {
     case "UPDATE_LOAN":

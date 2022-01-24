@@ -73,19 +73,10 @@ describe("Loan", () => {
     ).not.toBeInTheDocument();
   });
 
-  // test open and close modal
   it("should open modal", () => {
     render(<Loan loan={loan} />);
     const button = screen.getByText("Invest");
     fireEvent.click(button);
     expect(screen.getByText("Invest in loan")).toBeInTheDocument();
-  });
-
-  it("should close modal", () => {
-    render(<Loan loan={loan} />);
-    const button = screen.getByText("Invest");
-    fireEvent.click(button);
-    fireEvent.click(document);
-    expect(screen.queryByText("Invest in loan")).not.toBeInTheDocument();
   });
 });

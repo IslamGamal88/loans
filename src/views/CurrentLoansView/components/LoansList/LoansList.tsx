@@ -5,7 +5,6 @@ import { LoansContext } from "../../../../contexts/loans.context";
 
 const LoanList = () => {
   const { loans } = useContext(LoansContext);
-  console.log("loans", loans);
   return (
     <VStack align="flex-start" w="100%" spacing={10}>
       {loans.map((loan) => (

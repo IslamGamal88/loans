@@ -1,12 +1,9 @@
-import { createContext, FC } from "react";
+import React, { createContext, FC } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import loansReducer, {
-  initialDispatch,
-  initialState,
-} from "../store/reducers/loans.reducer";
+import loansReducer, { initialState } from "../store/reducers/loans.reducer";
 
 export const LoansContext = createContext(initialState);
-export const DispatchContext = createContext(initialDispatch);
+export const DispatchContext = createContext<React.Dispatch<any>>(() => null);
 
 const LoansContextProvider: FC = ({ children }) => {
   const [state, dispatch] = useLocalStorage(
@@ -14,7 +11,6 @@ const LoansContextProvider: FC = ({ children }) => {
     initialState,
     loansReducer
   );
-  console.log("state", state);
   return (
     <LoansContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>
