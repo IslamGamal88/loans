@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { useContext } from "react";
 import Loan from "../Loan/Loan";
-import { LoanListProps } from "../../../types";
 import { VStack } from "@chakra-ui/react";
+import { LoansContext } from "../../../../contexts/loans.context";
 
-const LoanList: FC<LoanListProps> = ({ loans }) => {
+const LoanList = () => {
+  const { loans } = useContext(LoansContext);
+  console.log("loans", loans);
   return (
     <VStack align="flex-start" w="100%" spacing={10}>
       {loans.map((loan) => (

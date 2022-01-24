@@ -8,8 +8,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import ModalComponent from "../../../../../components/Modal/ModalComponent";
-import { LoanProps } from "../../../types";
+import Gate from "../../../../components/Gate/Gate";
+import ModalComponent from "../../../../components/Modal/ModalComponent";
+import { LoanProps } from "../../types";
 
 const Loan: FC<LoanProps> = ({ loan }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,9 +22,11 @@ const Loan: FC<LoanProps> = ({ loan }) => {
           <Text>{loan.title}</Text>
         </VStack>
         <VStack spacing={5}>
-          <Text color="green.500" fontSize={"sm"}>
-            Invested
-          </Text>
+          <Gate gate={loan.invested}>
+            <Text color="green.500" fontSize={"sm"}>
+              Invested
+            </Text>
+          </Gate>
           <Button onClick={onOpen} p={5} bg={"yellow.300"}>
             Invest
           </Button>

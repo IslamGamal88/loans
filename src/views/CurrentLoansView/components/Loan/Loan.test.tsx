@@ -10,6 +10,7 @@ const loan = {
   termRemaining: "879000",
   ltv: "48.80",
   loanValue: "85,754",
+  invested: false,
 };
 
 describe("Loan", () => {
@@ -30,6 +31,7 @@ describe("Loan", () => {
       termRemaining: "879000",
       ltv: "48.80",
       loanValue: "85,754",
+      invested: false,
     };
     render(<Loan loan={loan} />);
     expect(
@@ -47,11 +49,10 @@ describe("Loan", () => {
       termRemaining: "879000",
       ltv: "48.80",
       loanValue: "85,754",
+      invested: false,
     };
     render(<Loan loan={loan} />);
-    expect(
-      screen.queryByText("Robins Gate, Wavering Lane West, Gillingham")
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText("tranche: C")).not.toBeInTheDocument();
   });
 
   it("should render no available amount", () => {
@@ -64,10 +65,11 @@ describe("Loan", () => {
       termRemaining: "879000",
       ltv: "48.80",
       loanValue: "85,754",
+      invested: false,
     };
     render(<Loan loan={loan} />);
     expect(
-      screen.queryByText("Robins Gate, Wavering Lane West, Gillingham")
+      screen.queryByText("available amount: 12,359")
     ).not.toBeInTheDocument();
   });
 

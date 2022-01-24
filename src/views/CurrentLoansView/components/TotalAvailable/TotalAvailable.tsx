@@ -1,8 +1,9 @@
 import { Box } from "@chakra-ui/react";
-import { FC } from "react";
-import { Props } from "./types";
+import { useContext } from "react";
+import { LoansContext } from "../../../../contexts/loans.context";
 
-const TotalAvailable: FC<Props> = ({ totalAvailable }) => {
+const TotalAvailable = () => {
+  const { totalAvailable } = useContext(LoansContext);
   return (
     <Box alignSelf={"center"}>
       Total amount available for investments: {totalAvailable}

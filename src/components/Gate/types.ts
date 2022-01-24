@@ -1,3 +1,3 @@
 export interface Props {
-  gate?: string;
+  gate?: boolean;
 }

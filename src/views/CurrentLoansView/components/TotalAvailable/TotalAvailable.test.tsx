@@ -3,16 +3,16 @@ import { render, screen } from "@testing-library/react";
 
 describe("TotalAvailable", () => {
   it("should render", () => {
-    render(<TotalAvailable totalAvailable={10} />);
+    render(<TotalAvailable />);
     expect(
-      screen.getByText("Total amount available for investments: 10")
+      screen.getByText("Total amount available for investments: 54")
     ).toBeInTheDocument();
   });
 
   it("should render the correct total available amount", () => {
-    render(<TotalAvailable totalAvailable={10} />);
+    render(<TotalAvailable />);
     expect(
-      screen.getByText("Total amount available for investments: 10")
+      screen.getByText("Total amount available for investments: 54")
     ).toBeInTheDocument();
   });
 });

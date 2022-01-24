@@ -1,7 +1,5 @@
 import { FC } from "react";
-import { Heading, Container, Box, Flex } from "@chakra-ui/react";
-import CurrentLoansView from "../views/Loans/CurrentLoansView/CurrentLoansView";
-import TotalAvailable from "../views/Loans/CurrentLoansView/components/TotalAvailable/TotalAvailable";
+import { Container, Box } from "@chakra-ui/react";
 
 const Main: FC = ({ children }) => (
   <Box
@@ -13,16 +11,7 @@ const Main: FC = ({ children }) => (
     bg="gray.200"
   >
     <Container h="100%" p="0" maxW="container.xl">
-      <Flex
-        justifyContent={"space-between"}
-        direction={"column"}
-        alignItems="flex-start"
-        h="full"
-      >
-        <Heading>Current Loans</Heading>
-        <CurrentLoansView>{children}</CurrentLoansView>
-        <TotalAvailable />
-      </Flex>
+      {children}
     </Container>
   </Box>
 );

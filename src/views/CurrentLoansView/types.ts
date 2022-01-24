@@ -15,4 +15,5 @@ export interface Loan {
   termRemaining: string;
   ltv: string;
   loanValue: string;
+  invested: boolean;
 }
