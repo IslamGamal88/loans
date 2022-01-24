@@ -8,7 +8,7 @@ const snakeToCamelCase = (str: string) =>
     .join("");
 
 const stringToNumber = (str: string | number) =>
-  typeof str === "string" ? parseInt(str.replace(",", "")) : str;
+  typeof str === "string" ? parseFloat(str.replace(/,/g, "")) : str;
 
 const formatNumber = (num: number) => Intl.NumberFormat().format(num);
 

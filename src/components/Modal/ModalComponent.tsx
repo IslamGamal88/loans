@@ -58,6 +58,7 @@ const ModalComponent: FC<Props> = ({
               <Text>Invested amount (&pound;)</Text>
               <HStack justifyContent={"space-between"} w={"full"}>
                 <NumberInput
+                  data-testid="invest-input"
                   value={value}
                   onChange={handleChange}
                   clampValueOnBlur={false}
@@ -69,6 +70,7 @@ const ModalComponent: FC<Props> = ({
                   <NumberInputStepper></NumberInputStepper>
                 </NumberInput>
                 <Button
+                  data-testid="invest-button"
                   onClick={handleClick}
                   disabled={value > stringToNumber(loan.availableAmount)}
                   bg={"yellow.300"}

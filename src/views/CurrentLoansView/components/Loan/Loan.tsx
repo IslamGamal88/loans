@@ -28,7 +28,12 @@ const Loan: FC<LoanProps> = ({ loan }) => {
               Invested
             </Text>
           </Gate>
-          <Button onClick={onOpen} p={5} bg={"yellow.300"}>
+          <Button
+            data-testid={loan.id}
+            onClick={onOpen}
+            p={5}
+            bg={"yellow.300"}
+          >
             Invest
           </Button>
           <ModalComponent
